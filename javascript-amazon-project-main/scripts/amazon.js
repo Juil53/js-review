@@ -1,5 +1,3 @@
-
-
 let productsHTML = ''
 
 products.forEach((product) => {
@@ -78,6 +76,13 @@ document.querySelectorAll('.js-add-to-cart').forEach((button) => {
         quantity: 1
       })
     }
-    console.log(cart);
+
+    //Calculate quantity
+    let cartQuantity = 0;
+    cart.forEach((item) => {
+      cartQuantity += item.quantity
+    })
+
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   })
 })
